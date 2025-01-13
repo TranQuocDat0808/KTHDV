@@ -1,15 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
-namespace YourNamespace.Controllers
+[ApiController]
+[Route("api/[controller]")]
+public class HelloController : ControllerBase
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class HelloWorldController : ControllerBase
+    [HttpGet("hello")]
+    [Authorize]  // Yêu cầu token hợp lệ
+    public IActionResult GetHello()
     {
-        [HttpGet]
-        public IActionResult Get()
-        {
-            return Ok("Hello World!");
-        }
+        return Ok("Hello World");
     }
 }

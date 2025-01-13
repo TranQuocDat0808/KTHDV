@@ -1,25 +1,32 @@
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Supermarket.Middlewares;
+using Supermarket.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Đăng ký các dịch vụ
+builder.Services.AddSingleton<TokenService>();  // Đăng ký TokenService
+builder.Services.AddControllers();  // Đăng ký controllers
 
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+// Cấu hình Swagger (nếu cần thiết)
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Cấu hình middleware
+app.UseMiddleware<JwtMiddleware>();  // Middleware xác thực JWT
+
+// Cấu hình Swagger (nếu cần thiết)
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwagger();  // Tạo swagger endpoint
+    app.UseSwaggerUI();  // Hiển thị Swagger UI
 }
 
-app.UseHttpsRedirection();
+// Map các API controllers
+app.MapControllers();  // Sử dụng các controllers cho API
 
-app.UseAuthorization();
-
-app.MapControllers();
-
-app.Run();
+app.Run();  // Chạy ứng dụng
