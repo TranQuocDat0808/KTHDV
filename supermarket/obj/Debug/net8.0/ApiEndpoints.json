@@ -1,8 +1,8 @@
 [
   {
-    "ContainingType": "YourNamespace.Controllers.HelloWorldController",
-    "Method": "Get",
-    "RelativePath": "api/HelloWorld",
+    "ContainingType": "Supermarket.Controllers.SupermarketController",
+    "Method": "GetHelloWorld",
+    "RelativePath": "api/Supermarket/hello",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

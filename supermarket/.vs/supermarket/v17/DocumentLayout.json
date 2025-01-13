@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "D:\\DotNet\\KTHDV\\supermarket\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5FE30291-0443-4EBB-8A3F-9D29EAB47E71}|supermarket.csproj|d:\\dotnet\\kthdv\\supermarket\\controllers\\helloworldcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FE30291-0443-4EBB-8A3F-9D29EAB47E71}|supermarket.csproj|solutionrelative:controllers\\helloworldcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5FE30291-0443-4EBB-8A3F-9D29EAB47E71}|supermarket.csproj|d:\\dotnet\\kthdv\\supermarket\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FE30291-0443-4EBB-8A3F-9D29EAB47E71}|supermarket.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FE30291-0443-4EBB-8A3F-9D29EAB47E71}|supermarket.csproj|d:\\dotnet\\kthdv\\supermarket\\controllers\\supermarketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FE30291-0443-4EBB-8A3F-9D29EAB47E71}|supermarket.csproj|solutionrelative:controllers\\supermarketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5FE30291-0443-4EBB-8A3F-9D29EAB47E71}|supermarket.csproj|d:\\dotnet\\kthdv\\supermarket\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,20 +66,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "HelloWorldController.cs",
-              "DocumentMoniker": "D:\\DotNet\\KTHDV\\supermarket\\Controllers\\HelloWorldController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HelloWorldController.cs",
-              "ToolTip": "D:\\DotNet\\KTHDV\\supermarket\\Controllers\\HelloWorldController.cs",
-              "RelativeToolTip": "Controllers\\HelloWorldController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAmAAAA",
+              "DocumentIndex": 1,
+              "Title": "SupermarketController.cs",
+              "DocumentMoniker": "D:\\DotNet\\KTHDV\\supermarket\\Controllers\\SupermarketController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SupermarketController.cs",
+              "ToolTip": "D:\\DotNet\\KTHDV\\supermarket\\Controllers\\SupermarketController.cs",
+              "RelativeToolTip": "Controllers\\SupermarketController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-13T16:03:29.459Z",
+              "WhenOpened": "2025-01-13T17:40:45.974Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\DotNet\\KTHDV\\supermarket\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\DotNet\\KTHDV\\supermarket\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T17:40:22.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "WeatherForecastController.cs",
               "DocumentMoniker": "D:\\DotNet\\KTHDV\\supermarket\\Controllers\\WeatherForecastController.cs",
               "RelativeDocumentMoniker": "Controllers\\WeatherForecastController.cs",
