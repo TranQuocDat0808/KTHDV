@@ -1,8 +1,24 @@
 [
   {
-    "ContainingType": "YourNamespace.Controllers.HelloWorldController",
-    "Method": "Get",
-    "RelativePath": "api/HelloWorld",
+    "ContainingType": "Supermarket.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Supermarket.Models.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HelloController",
+    "Method": "GetHello",
+    "RelativePath": "api/Hello/hello",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
