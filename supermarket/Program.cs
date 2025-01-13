@@ -1,32 +1,87 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Supermarket.Middlewares;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Supermarket;
+using Supermarket.Models;
 using Supermarket.Services;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Đăng ký các dịch vụ
-builder.Services.AddSingleton<TokenService>();  // Đăng ký TokenService
-builder.Services.AddControllers();  // Đăng ký controllers
+// Cấu hình kết nối cơ sở dữ liệu
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Cấu hình Swagger (nếu cần thiết)
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+// Thêm các dịch vụ vào container của DI
+builder.Services.AddScoped<ProductService>();
+
+// Thêm dịch vụ điều khiển API
+builder.Services.AddControllers();
+
+// Cấu hình bảo mật JWT
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = false,
+            ValidateAudience = false,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("this_is_a_very_strong_secret_key_256bits"))
+        };
+    });
+
+
+// Cấu hình Swagger cho API
+builder.Services.AddSwaggerGen(options =>
+{
+    options.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        In = Microsoft.OpenApi.Models.ParameterLocation.Header,
+        Type = Microsoft.OpenApi.Models.SecuritySchemeType.ApiKey,
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        Description = "Please enter JWT with Bearer into input field"
+    });
+
+    options.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement
+    {
+        {
+            new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+            {
+                Reference = new Microsoft.OpenApi.Models.OpenApiReference
+                {
+                    Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            new string[] { }
+        }
+    });
+});
 
 var app = builder.Build();
 
-// Cấu hình middleware
-app.UseMiddleware<JwtMiddleware>();  // Middleware xác thực JWT
-
-// Cấu hình Swagger (nếu cần thiết)
+// Kích hoạt Swagger UI
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();  // Tạo swagger endpoint
-    app.UseSwaggerUI();  // Hiển thị Swagger UI
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1");
+        c.RoutePrefix = "swagger"; // Đảm bảo Swagger UI có thể được truy cập tại /swagger
+    });
 }
 
-// Map các API controllers
-app.MapControllers();  // Sử dụng các controllers cho API
 
-app.Run();  // Chạy ứng dụng
+// Cấu hình middleware cho xác thực và xử lý lỗi
+app.UseAuthentication();
+app.UseAuthorization();
+
+// Map các route cho API
+app.MapControllers();
+
+// Khởi chạy ứng dụng
+app.Run();
