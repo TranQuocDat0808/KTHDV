@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\QuaLuuNiem\\supermarket\\supermarket.csproj": {}
+    "D:\\DotNet\\KTHDV\\supermarket\\supermarket.csproj": {}
   },
   "projects": {
-    "D:\\QuaLuuNiem\\supermarket\\supermarket.csproj": {
+    "D:\\DotNet\\KTHDV\\supermarket\\supermarket.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\QuaLuuNiem\\supermarket\\supermarket.csproj",
+        "projectUniqueName": "D:\\DotNet\\KTHDV\\supermarket\\supermarket.csproj",
         "projectName": "supermarket",
-        "projectPath": "D:\\QuaLuuNiem\\supermarket\\supermarket.csproj",
+        "projectPath": "D:\\DotNet\\KTHDV\\supermarket\\supermarket.csproj",
         "packagesPath": "C:\\Users\\tnphu\\.nuget\\packages\\",
-        "outputPath": "D:\\QuaLuuNiem\\supermarket\\obj\\",
+        "outputPath": "D:\\DotNet\\KTHDV\\supermarket\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tnphu\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0ChkjO7j2D0rKzuBPSs5nnYC2yzKQ2CW+r0gINsmgrI3TDsDOgXmhho1RVnbzV4EaWSvaSzs8ANfzw/k+rBR+w==",
+  "dgSpecHash": "iX7LsfUyClBsay7hmJfE/dntzmexpnyzQkP6CD/KqKoX6VG2Vmr1XL2qJDCcQ+BQa5ORS0oS1DboLoOEGTocRw==",
   "success": true,
-  "projectFilePath": "D:\\QuaLuuNiem\\supermarket\\supermarket.csproj",
+  "projectFilePath": "D:\\DotNet\\KTHDV\\supermarket\\supermarket.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tnphu\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.0\\microsoft.aspnetcore.authentication.jwtbearer.8.0.0.nupkg.sha512",
     "C:\\Users\\tnphu\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
