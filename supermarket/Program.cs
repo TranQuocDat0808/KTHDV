@@ -1,32 +1,48 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Supermarket.Middlewares;
-using Supermarket.Services;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using Swashbuckle.AspNetCore.SwaggerGen;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Đăng ký các dịch vụ
-builder.Services.AddSingleton<TokenService>();  // Đăng ký TokenService
-builder.Services.AddControllers();  // Đăng ký controllers
-
-// Cấu hình Swagger (nếu cần thiết)
+// Thêm dịch vụ Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Cấu hình JWT
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = false,  // Chỉnh sửa nếu cần
+        ValidateAudience = false,  // Chỉnh sửa nếu cần
+        ValidateLifetime = true,  // Kiểm tra thời gian sống của token
+        ValidateIssuerSigningKey = true,  // Kiểm tra khóa ký token
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("this_is_a_very_strong_secret_key_256bits"))  // Khóa bí mật 256 bit
+    };
+});
+
+builder.Services.AddControllers();
+
 var app = builder.Build();
 
-// Cấu hình middleware
-app.UseMiddleware<JwtMiddleware>();  // Middleware xác thực JWT
-
-// Cấu hình Swagger (nếu cần thiết)
-if (app.Environment.IsDevelopment())
+// Kích hoạt Swagger và Swagger UI
+app.UseSwagger();
+app.UseSwaggerUI(c =>
 {
-    app.UseSwagger();  // Tạo swagger endpoint
-    app.UseSwaggerUI();  // Hiển thị Swagger UI
-}
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Supermarket API v1");
+    c.RoutePrefix = "swagger";  // Đặt Swagger UI để truy cập tại /swagger
+});
 
-// Map các API controllers
-app.MapControllers();  // Sử dụng các controllers cho API
+// Bật Authentication và Authorization middleware
+app.UseAuthentication();
+app.UseAuthorization();
 
-app.Run();  // Chạy ứng dụng
+app.MapControllers();
+
+app.Run();

@@ -1,54 +1,43 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.IdentityModel.Tokens;
-using System;
+﻿using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace Supermarket.Middlewares
+public class JwtMiddleware
 {
-    public class JwtMiddleware
+    private readonly RequestDelegate _next;
+
+    public JwtMiddleware(RequestDelegate next)
     {
-        private readonly RequestDelegate _next;
-        private readonly string _secretKey = "your-secret-key";  // Thay bằng khóa bí mật an toàn
+        _next = next;
+    }
 
-        public JwtMiddleware(RequestDelegate next)
+    public async Task InvokeAsync(HttpContext httpContext)
+    {
+        var token = httpContext.Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
+
+        if (!string.IsNullOrEmpty(token))
         {
-            _next = next;
-        }
+            var handler = new JwtSecurityTokenHandler();
+            var key = Encoding.UTF8.GetBytes("your_secret_key_here");
 
-        public async Task InvokeAsync(HttpContext httpContext)
-        {
-            var token = httpContext.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
-
-            if (token != null)
-            {
-                ValidateToken(token);
-            }
-
-            await _next(httpContext);
-        }
-
-        private void ValidateToken(string token)
-        {
             try
             {
-                var tokenHandler = new JwtSecurityTokenHandler();
-                var key = Encoding.UTF8.GetBytes(_secretKey);
-                tokenHandler.ValidateToken(token, new TokenValidationParameters
+                var claimsPrincipal = handler.ValidateToken(token, new TokenValidationParameters
                 {
-                    IssuerSigningKey = new SymmetricSecurityKey(key),
                     ValidateIssuer = false,
                     ValidateAudience = false,
                     ValidateLifetime = true,
-                    ClockSkew = TimeSpan.Zero
+                    IssuerSigningKey = new SymmetricSecurityKey(key)
                 }, out var validatedToken);
+
+                httpContext.User = claimsPrincipal;
             }
             catch
             {
-                // Nếu token không hợp lệ
+                // Token không hợp lệ
             }
         }
+
+        await _next(httpContext);
     }
 }

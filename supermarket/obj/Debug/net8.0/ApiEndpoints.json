@@ -1,6 +1,16 @@
 [
   {
     "ContainingType": "Supermarket.Controllers.AuthController",
+    "Method": "AuthenticatedEndpoint",
+    "RelativePath": "api/Auth/auth",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Supermarket.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/login",
     "HttpMethod": "POST",
@@ -16,9 +26,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "HelloController",
-    "Method": "GetHello",
-    "RelativePath": "api/Hello/hello",
+    "ContainingType": "Supermarket.Controllers.SupermarketController",
+    "Method": "GetHelloWorld",
+    "RelativePath": "api/Supermarket/hello",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
