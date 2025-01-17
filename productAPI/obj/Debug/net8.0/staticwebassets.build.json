@@ -1,5 +1,6 @@
 {
   "Version": 1,
+<<<<<<< HEAD
 <<<<<<<< HEAD:productAPI/obj/Debug/net8.0/staticwebassets.build.json
   "Hash": "SHPJvsJBoXExkcRn2e2RNGHQ9yskEC5lm7VaaIpmVTA=",
   "Source": "productAPI",
@@ -9,6 +10,11 @@
   "Source": "AuthAPI",
   "BasePath": "_content/AuthAPI",
 >>>>>>>> a6f8fed7a993f4cc31472495ed2db86ae963b508:AuthAPI/obj/Debug/net8.0/staticwebassets.build.json
+=======
+  "Hash": "SHPJvsJBoXExkcRn2e2RNGHQ9yskEC5lm7VaaIpmVTA=",
+  "Source": "productAPI",
+  "BasePath": "_content/productAPI",
+>>>>>>> b695bfd3aed16dcfb863bbf605273305105b5f97
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

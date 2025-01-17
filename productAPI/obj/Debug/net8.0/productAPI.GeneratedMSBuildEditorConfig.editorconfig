@@ -15,13 +15,23 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
+<<<<<<<< HEAD:productAPI/obj/Debug/net8.0/productAPI.GeneratedMSBuildEditorConfig.editorconfig
 build_property.RootNamespace = productAPI
 build_property.RootNamespace = productAPI
 build_property.ProjectDir = D:\DotNet\API\ServiceAPI\productAPI\
+========
+build_property.RootNamespace = supermarket
+build_property.RootNamespace = supermarket
+build_property.ProjectDir = d:\DotNet\KTHDV-1\supermarket\
+>>>>>>>> b695bfd3aed16dcfb863bbf605273305105b5f97:supermarket/obj/Debug/net8.0/supermarket.GeneratedMSBuildEditorConfig.editorconfig
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+<<<<<<<< HEAD:productAPI/obj/Debug/net8.0/productAPI.GeneratedMSBuildEditorConfig.editorconfig
 build_property.MSBuildProjectDirectory = D:\DotNet\API\ServiceAPI\productAPI
+========
+build_property.MSBuildProjectDirectory = d:\DotNet\KTHDV-1\supermarket
+>>>>>>>> b695bfd3aed16dcfb863bbf605273305105b5f97:supermarket/obj/Debug/net8.0/supermarket.GeneratedMSBuildEditorConfig.editorconfig
 build_property._RazorSourceGeneratorDebug = 
