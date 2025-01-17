@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<<< HEAD:productAPI/obj/productAPI.csproj.nuget.dgspec.json
     "D:\\DotNet\\API\\ServiceAPI\\productAPI\\productAPI.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "D:\\DotNet\\API\\ServiceAPI\\productAPI\\productAPI.csproj",
         "packagesPath": "C:\\Users\\tnphu\\.nuget\\packages\\",
         "outputPath": "D:\\DotNet\\API\\ServiceAPI\\productAPI\\obj\\",
+========
+    "D:\\DotNet\\KTHDV\\supermarket\\supermarket.csproj": {}
+  },
+  "projects": {
+    "D:\\DotNet\\KTHDV\\supermarket\\supermarket.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\DotNet\\KTHDV\\supermarket\\supermarket.csproj",
+        "projectName": "supermarket",
+        "projectPath": "D:\\DotNet\\KTHDV\\supermarket\\supermarket.csproj",
+        "packagesPath": "C:\\Users\\tnphu\\.nuget\\packages\\",
+        "outputPath": "D:\\DotNet\\KTHDV\\supermarket\\obj\\",
+>>>>>>>> a6f8fed7a993f4cc31472495ed2db86ae963b508:AuthAPI/obj/supermarket.csproj.nuget.dgspec.json
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tnphu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -53,10 +67,13 @@
               "target": "Package",
               "version": "[9.0.0, )"
             },
+<<<<<<<< HEAD:productAPI/obj/productAPI.csproj.nuget.dgspec.json
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[9.0.0, )"
             },
+========
+>>>>>>>> a6f8fed7a993f4cc31472495ed2db86ae963b508:AuthAPI/obj/supermarket.csproj.nuget.dgspec.json
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[9.0.0, )"
@@ -69,7 +86,11 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.4.0, )"
+              "version": "[7.2.0, )"
+            },
+            "Swashbuckle.AspNetCore.Filters": {
+              "target": "Package",
+              "version": "[8.0.2, )"
             }
           },
           "imports": [

@@ -13,8 +13,23 @@
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
+<<<<<<<< HEAD:productAPI/Properties/launchSettings.json
       "launchUrl": "swagger",
       "applicationUrl": "http://localhost:5058",
+========
+      "launchUrl": "swagger", // Swagger UI sẽ tự động mở khi chạy
+      "applicationUrl": "http://localhost:5085",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "https": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "swagger", // Swagger UI sẽ tự động mở khi chạy
+      "applicationUrl": "https://localhost:7244", // Đảm bảo chỉ sử dụng một cổng HTTPS
+>>>>>>>> a6f8fed7a993f4cc31472495ed2db86ae963b508:AuthAPI/Properties/launchSettings.json
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -22,7 +37,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "swagger",
+      "launchUrl": "swagger", // Swagger UI sẽ tự động mở khi chạy
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
