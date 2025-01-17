@@ -14,14 +14,24 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
+<<<<<<<< HEAD:OrderManagement/obj/Debug/net8.0/OrderManagement.GeneratedMSBuildEditorConfig.editorconfig
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = OrderManagement
 build_property.RootNamespace = OrderManagement
 build_property.ProjectDir = D:\DotNet\API\ServiceAPI\OrderManagement\
+========
+build_property.RootNamespace = supermarket
+build_property.RootNamespace = supermarket
+build_property.ProjectDir = d:\DotNet\KTHDV-1\supermarket\
+>>>>>>>> 46173d6c4a1403d2572143d3e50ef7bbb28b1ab0:supermarket/obj/Debug/net8.0/supermarket.GeneratedMSBuildEditorConfig.editorconfig
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+<<<<<<<< HEAD:OrderManagement/obj/Debug/net8.0/OrderManagement.GeneratedMSBuildEditorConfig.editorconfig
 build_property.MSBuildProjectDirectory = D:\DotNet\API\ServiceAPI\OrderManagement
+========
+build_property.MSBuildProjectDirectory = d:\DotNet\KTHDV-1\supermarket
+>>>>>>>> 46173d6c4a1403d2572143d3e50ef7bbb28b1ab0:supermarket/obj/Debug/net8.0/supermarket.GeneratedMSBuildEditorConfig.editorconfig
 build_property._RazorSourceGeneratorDebug = 
